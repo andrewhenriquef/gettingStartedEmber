@@ -1,0 +1,27 @@
+{{#list-filter
+   filter=(action 'filterByCity')
+   as |rentals|}}
+  <ul class="results">
+    {{#each rentals as |rentalUnit|}}
+      <li>{{rental-listing rental=rentalUnit}}</li>
+    {{/each}}
+  </ul>
+{{/list-filter}}
+{{outlet}}
+
+<!--
+{{#power-select options=names onchange=(action "selectName") as |name|}}
+  {{name}}
+{{/power-select}}
+
+<div>
+  <select onchange={{action "findByName" value="target.value"}}>
+    <option value="">select any thing</option>
+      {{#each names as |name|}}
+        <option value={{name}}>
+          {{name}}
+        </option>
+        {{/each}}
+  </select>
+</div>
+-->
